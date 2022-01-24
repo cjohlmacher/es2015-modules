@@ -4,10 +4,9 @@ const choice = (items) => {
 };
 
 const remove = (items, item) => {
-    const idx = items.find((i) => {
-        return i === item;
-    });
-    return idx;
+    const idx = items.indexOf(item);
+    items = items.slice(0,idx).concat(items.slice(idx+1));
+    return items;
 };
 
 export {choice, remove}
